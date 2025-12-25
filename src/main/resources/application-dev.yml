@@ -5,7 +5,7 @@ spring:
     activate:
       on-profile: dev
   datasource:
-    url: jdbc:h2:mem:devdb
+    url: jdbc:h2:mem:devdb;MODE=MySQL
     driver-class-name: org.h2.Driver
     username: sa
     password:

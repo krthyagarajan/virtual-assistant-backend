@@ -15,7 +15,7 @@
     <packaging>war</packaging>
 	<name>virtual-assistant-backend</name>
 	
-	<description>Springboot backend application for Virtual Assistant</description>
+	<description>Spring boot backend application for Virtual Assistant</description>
 	
 	<properties>
 		<java.version>21</java.version>
@@ -63,19 +63,11 @@
         </dependency>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-flyway</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-hateoas</artifactId>
 		</dependency>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-webmvc</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>org.flywaydb</groupId>
-			<artifactId>flyway-mysql</artifactId>
 		</dependency>
 		<dependency>
 			<groupId>org.springframework.cloud</groupId>
@@ -115,11 +107,6 @@
 		</dependency>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-flyway-test</artifactId>
-			<scope>test</scope>
-		</dependency>
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-hateoas-test</artifactId>
 			<scope>test</scope>
 		</dependency>
@@ -144,18 +131,7 @@
 	<build>
         <finalName>virtual-assistant-backend</finalName>
 		<plugins>
-            <plugin>
-                <groupId>org.opoo.maven</groupId>
-                <artifactId>tomcat9-maven-plugin</artifactId>
-                <version>3.0.1</version>
-                <configuration>
-                    <url>http://localhost:8080/manager/text</url>
-                    <server>local-tomcat</server>
-                    <path>/virtual-assistant-backend</path>
-                </configuration>
-            </plugin>
 			<plugin>
-
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-compiler-plugin</artifactId>
 				<configuration>
@@ -172,7 +148,7 @@
 				<artifactId>spring-boot-maven-plugin</artifactId>
 				<configuration>
                     <profiles>
-                        ${spring.profile.active}
+                        prod
                     </profiles>
 					<excludes>
 						<exclude>
@@ -184,5 +160,4 @@
 			</plugin>
 		</plugins>
 	</build>
-
 </project>
